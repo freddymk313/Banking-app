@@ -85,8 +85,12 @@ const AuthForm = ({ type }: { type: string }) => {
                     <FormLabel className="form-label">Email</FormLabel>
                     <div className="flex w-full flex-col">
                       <FormControl>
-                        <Input placeholder="Enter your email"/>
+                        <Input placeholder="Enter your email"
+                        className="input-class"
+                        {...field}
+                        />
                       </FormControl>
+                      <FormMessage className="form-message" />
                     </div>
                   </div>
                 )}
