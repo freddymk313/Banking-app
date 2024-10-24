@@ -1,4 +1,9 @@
 "use client";
+import { Chart as Chartjs, ArcElement, Tooltip, Legend } from "chart.js";
+import { Doughnut } from "react-chartjs-2";
+
+Chartjs.register(ArcElement, Tooltip, Legend);
+
 const DoughnutChart = ({ accounts }: DoughnutChartProps) => {
   const data = {
     datasets: [
@@ -13,16 +18,17 @@ const DoughnutChart = ({ accounts }: DoughnutChartProps) => {
 
   return (
     <>
-      {/* <Doughnut data={data}
+      <Doughnut
+        data={data}
         options={{
-            cutout: '60%,
-            plugins: {
-                legend:{
-                    display: false
-                }
-            }
+          cutout: "60%",
+          plugins: {
+            legend: {
+              display: false,
+            },
+          },
         }}
-    /> */}
+      />
     </>
   );
 };
